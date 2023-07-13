@@ -118,7 +118,7 @@
 
     {{^hideloginform}}
 
-    <form class="login-form" action="{{loginurl}}" method="post" id="login">
+    <form class="login-form" action="{{loginurl}}" method="post" id="login" style="display:none;">
         <input type="hidden" name="logintoken" value="{{logintoken}}">
         <div class="login-form-username form-group">
             <label for="username" class="sr-only">
@@ -155,7 +155,7 @@
 
     {{#hasidentityproviders}}
         <div class="login-divider"></div>
-        <div class="login-identityproviders">
+        <div class="login-identityproviders" id="sso">
             <h2 class="login-heading">{{#str}} potentialidps, auth {{/str}}</h2>
             {{#identityproviders}}
                 <a class="btn login-identityprovider-btn btn-block" href="{{url}}">
@@ -190,6 +190,9 @@
         </form>
     {{/canloginasguest}}
     <div class="login-divider"></div>
+	<div class="login-divider"></div>
+    <button onclick="hideLogin()" id="loginOptionButton" class="btn btn-secondary btn-block" role="button">Special Accounts</button>
+    <div class="d-flex">
     <div class="d-flex">
         {{#languagemenu}}
             <div class="login-languagemenu">
