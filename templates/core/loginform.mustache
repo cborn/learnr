@@ -116,8 +116,6 @@
         <a href="{{signupurl}}" class="sr-only">{{#str}} tocreatenewaccount {{/str}}</a>
     {{/cansignup}}
 
-    {{^hideloginform}}
-
     <form class="login-form" action="{{loginurl}}" method="post" id="login" style="display:none;">
         <input type="hidden" name="logintoken" value="{{logintoken}}">
         <div class="login-form-username form-group">
@@ -150,8 +148,6 @@
             <a href="{{forgotpasswordurl}}">{{#str}}forgotaccount{{/str}}</a>
         </div>
     </form>
-
-    {{/hideloginform}}
 
     {{#hasidentityproviders}}
         <div class="login-divider"></div>
